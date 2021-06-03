@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+$second-color: #e85a19;
+$thrid-color: #f5ce62;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nova Mono', monospace;
+    overflow-x: hidden;
+
+    body{
+        background-color: #222;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 20px;
+        overflow: hidden;
+        background: rgba(20, 20, 20, 1);
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: rgba(20, 20, 20, 1);
+        border-radius: 13px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(0deg, $second-color, $thrid-color);
+        border-radius: 13px;
+
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(0deg, $thrid-color, $second-color);
+    }
+}
