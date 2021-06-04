@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Switch>
           <Route exact path="/generator" component={Generator} />
-          <Route exact>
+          <Route path="*">
             <Redirect to="/generator" />  
           </Route> 
       </Switch>
