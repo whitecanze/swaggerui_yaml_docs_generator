@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
 $second-color: #e85a19;
 $thrid-color: #f5ce62;
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nova Mono', monospace;
+
+    font-family: 'Mitr',sans-serif;
+
+    // font-family: 'Nova Mono', monospace;
     overflow-x: hidden;
 
     body{
