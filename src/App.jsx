@@ -10,7 +10,7 @@ function App() {
       <Switch>
           <Route exact path="/generator" component={Generator} />
           <Route exact path="/cal" component={Form} />
-          <Route path="*">
+          <Route>
             <Redirect to="/generator" />  
           </Route> 
       </Switch>
