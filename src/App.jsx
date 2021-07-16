@@ -8,10 +8,10 @@ function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/generator" component={Generator} />
+          <Route exact path="/" component={Generator} />
           <Route exact path="/cal" component={Form} />
-          <Route>
-            <Redirect to="/generator" />  
+          <Route path="/generator">
+            <Redirect to="/" />  
           </Route> 
       </Switch>
     </Router>
