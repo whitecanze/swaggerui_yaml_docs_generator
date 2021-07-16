@@ -8,10 +8,10 @@ function App() {
   return (
     <HashRouter hashType="noslash">
       <Switch>
-          <Route exact path="/#" component={Generator} />
-          <Route exact path="/#cal" component={Form} />
+          <Route exact path="/" component={Generator} />
+          <Route exact path="/cal" component={Form} />
           <Route>
-            <Redirect to="/#" />
+            <Redirect to="/" />
           </Route> 
       </Switch>
     </HashRouter>
