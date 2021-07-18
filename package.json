@@ -4,10 +4,11 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "init": "npm install"
   },
   "dependencies": {
-    "node-sass": "^6.0.0",
+    "node-sass": "^6.0.1",
     "react": "^17.0.0",
     "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^17.0.0",

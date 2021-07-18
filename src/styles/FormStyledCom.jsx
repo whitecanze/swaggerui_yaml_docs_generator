@@ -11,11 +11,17 @@ export const MainWrapper = styled.div`
     color: #ddd;
 `
 
-export const HeaderTitle = styled.h1`
+export const HeaderWrapper = styled.div`
     background-color: #111;
     width: 100%;
     height: auto;
-    padding: 1vw 0 1vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+`
+
+export const HeaderTitle = styled.h1`
     text-align: center;
     font-size: 2vw;
     font-weight: 500;
@@ -23,6 +29,17 @@ export const HeaderTitle = styled.h1`
     &:before {
         content: '${({ textContent }) => textContent ? textContent : 'Blah Blah'}';
     }
+`
+
+export const HeaderButton = styled.button`
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 1vw;
+    cursor: pointer;
 `
 
 export const FormWrapper = styled.div`
@@ -46,6 +63,19 @@ export const FormContentWrapper = styled.div`
 export const FormTitle = styled.h1`
     font-size: 1.25vw;
     font-weight: 300;
+    color: ${({color}) => color ? color : '#ddd'};
+    font-weight: ${({fontWeight})=> fontWeight && fontWeight};
+
+    &:before {
+        content: '${({ textContent }) => textContent ? textContent : 'Blah Blah'}';
+    }
+`
+export const FormResult = styled.h1`
+    font-size: 1.25vw;
+    font-weight: 300;
+    color: ${({color}) => color ? color : '#ddd'};
+    text-decoration: ${({underline})=> underline ? 'underline' : 'none'};
+    font-weight: ${({fontWeight})=> fontWeight && fontWeight};
 
     &:before {
         content: '${({ textContent }) => textContent ? textContent : 'Blah Blah'}';
@@ -67,11 +97,3 @@ export const FormInput = styled.input`
     color: #ddd;
 `
 
-export const FormResult = styled.h1`
-    font-size: 1.25vw;
-    font-weight: 300;
-    color: #ddd;
-    &:before {
-        content: '${({ textContent }) => textContent ? textContent : 'Blah Blah'}';
-    }
-`

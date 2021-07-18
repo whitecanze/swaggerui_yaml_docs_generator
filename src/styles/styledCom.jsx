@@ -9,6 +9,7 @@ export const MainPageWrapper = styled.div`
     background-color: #222;
 `
 export const MainHeader = styled.div`
+    // position: relative;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -52,6 +53,19 @@ export const MainHeader = styled.div`
         }
     }
 `
+
+export const PageButton = styled.button`
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 1vw;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 2;
+`
+
 export const MainHeaderText = styled.h1`
     font-size: 2vw;
     text-shadow: 0 0 10px #000;

@@ -1,8 +1,11 @@
 import React,{ useState, useEffect} from 'react'
-import {FormContentWrapper,FormInput,FormResult,FormTitle,FormWrapper,HeaderTitle,MainWrapper} from '../styles/FormStyledCom'
+import {useHistory} from 'react-router-dom'
+import {FormContentWrapper,FormInput,FormResult,FormTitle,FormWrapper,HeaderButton,HeaderTitle,HeaderWrapper,MainWrapper} from '../styles/FormStyledCom'
+import {FcHome} from 'react-icons/fc'
 
 const Form = () => {
 
+    const history = useHistory()
     const [chkDaily,setChkDaily] = useState(false)
     const [dailyStateDate,setDailyStateDate] = useState("")
     const [dailyStatePrice,setDailyStatePrice] = useState("1000")
@@ -97,24 +100,27 @@ const Form = () => {
 
     return (
         <MainWrapper>
-            <HeaderTitle textContent={"Projects Pricing Calculator"} />
+            <HeaderWrapper>
+                <HeaderTitle textContent={"Projects Pricing Calculator"}/>
+                <HeaderButton onClick={_=>history.push('/')}><FcHome size={"1.5vw"} /></HeaderButton>
+            </HeaderWrapper>
             <FormWrapper>
                 <FormContentWrapper>
-                    <FormTitle textContent={"ค่าแรงต่อวัน"} />
+                    <FormTitle fontWeight={"500"} textContent={"ค่าแรงต่อวัน"} />
                     <FormInput type={"number"} min={"0"} placeholder={"จำนวนวัน"} onChange={onChangeDailyDate} value={dailyStateDate ? dailyStateDate : ""} />
                     <FormTitle textContent={"วัน"} />
-                    <FormInput type={"number"} min={"0"} placeholder={"จำนวนค่าแรง"} onChange={onChangeDailyPrice} value={dailyStatePrice ? dailyStatePrice : ""} />
+                    <FormInput type={"number"} min={"0"} step={"100"} placeholder={"จำนวนค่าแรง"} onChange={onChangeDailyPrice} value={dailyStatePrice ? dailyStatePrice : ""} />
                     <FormTitle textContent={"บาท"} />
                 </FormContentWrapper>
                 <FormContentWrapper>
-                    <FormTitle textContent={"ต้นทุนอื่นๆต่อวัน"} />
+                    <FormTitle fontWeight={"500"} textContent={"ต้นทุนอื่นๆต่อวัน"} />
                     <FormInput type={"number"} min={"0"} placeholder={"จำนวนวัน"} onChange={onChangeCostDate} value={costStateDate ? costStateDate : ""} />
                     <FormTitle textContent={"วัน"} />
-                    <FormInput type={"number"} min={"0"} placeholder={"จำนวนต้นทุนอื่นๆ"} onChange={onChangeCostPrice} value={costStatePrice ? costStatePrice : ""} />
+                    <FormInput type={"number"} min={"0"} step={"100"} placeholder={"จำนวนต้นทุนอื่นๆ"} onChange={onChangeCostPrice} value={costStatePrice ? costStatePrice : ""} />
                     <FormTitle textContent={"บาท"} />
                 </FormContentWrapper>
                 <FormContentWrapper>
-                    <FormTitle textContent={"ต้นทุนรวม"} />
+                    <FormTitle fontWeight={"500"} textContent={"ต้นทุนรวม"} />
                     <FormResult textContent={`${numberWithCommas(dailyStateSummary ? parseInt(dailyStateSummary) : 0)} บาท`} />
                     <FormTitle textContent={"+"} />
                     <FormResult textContent={`${numberWithCommas(costStateSummary ? parseInt(costStateSummary) : 0)} บาท`} />
@@ -122,8 +128,8 @@ const Form = () => {
                     <FormResult textContent={`${numberWithCommas(fixCostSummary ? fixCostSummary : 0 )} บาท`} />
                 </FormContentWrapper>
                 <FormContentWrapper>
-                    <FormTitle textContent={"กำไร (%)"} />
-                    <FormInput type={"number"} min={"0"} placeholder={"จำนวนเปอเซ็นต์"} onChange={onChangePercent} value={percent ? percent : ""} />
+                    <FormTitle fontWeight={"500"} textContent={"กำไร (%)"} />
+                    <FormInput type={"number"} min={"20"} step={"10"} placeholder={"จำนวนเปอเซ็นต์"} onChange={onChangePercent} value={percent ? percent : ""} />
                     <FormResult textContent={`${numberWithCommas(profit ? parseInt(profit) : 0)} บาท`} />
                     <FormTitle textContent={"+"} />
                     <FormResult textContent={`${numberWithCommas(fixCostSummary ? fixCostSummary : 0 )} บาท`} />
@@ -131,13 +137,13 @@ const Form = () => {
                     <FormResult textContent={`${numberWithCommas(sumProfit ? sumProfit : 0 )} บาท`} />
                 </FormContentWrapper>
                 <FormContentWrapper>
-                    <FormTitle textContent={"ภาษีหัก ณ ที่จ่าย (%)"} />
-                    <FormInput type={"number"} min={"0"} placeholder={"จำนวนเปอเซ็นต์"} onChange={onChangeTax} value={tax ? tax : ""} />
+                    <FormTitle fontWeight={"500"} textContent={"ภาษีหัก ณ ที่จ่าย (%)"} />
+                    <FormInput type={"number"} min={"3"} placeholder={"จำนวนเปอเซ็นต์"} onChange={onChangeTax} value={tax ? tax : ""} />
                     <FormResult textContent={`${numberWithCommas(calTax ? calTax : 0)} บาท`} />
                 </FormContentWrapper>
                 <FormContentWrapper>
-                    <FormTitle textContent={"รวม"} />
-                    <FormResult textContent={`${numberWithCommas(allSummary ? allSummary : 0)} บาท`} />
+                    <FormTitle fontWeight={"500"} textContent={"รวม"} />
+                    <FormResult color={"green"} fontWeight={"500"} underline textContent={`${numberWithCommas(allSummary ? allSummary : 0)} บาท`} />
                 </FormContentWrapper>
             </FormWrapper>
         </MainWrapper>

@@ -1,8 +1,11 @@
 import React,{useState,useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import {FaPlay} from 'react-icons/fa'
+import {FcCalculator} from 'react-icons/fc'
 import {
     MainPageWrapper,
+    PageButton,
     MainHeader,
     MainHeaderText,
     MainContentBody,
@@ -30,11 +33,12 @@ import {
     DeleteDataItems,
     FormBtn,
     GenerateBtn
-} from './styledCom'
+} from '../styles/styledCom'
 
 
 const Generator = () => {
 
+    const history = useHistory()
     const [copied,setCopied] = useState(false)
     const [addData,setAddData] = useState(false)
     const [addRequestBox, setAddRequestBox] = useState(false);
@@ -488,6 +492,7 @@ const Generator = () => {
         )}
         <MainHeader>
           <MainHeaderText>SwaggerUI YAML Documents Generator</MainHeaderText>
+          <PageButton onClick={_=>history.push('/cal')}><FcCalculator size={"1.5vw"} /></PageButton>
         </MainHeader>
         <MainContentBody>
           <MainConntentBodyLeft>
